@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dezvoltareia: cum se construiesc aplicații cu AI</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+            line-height: 1.75;
+        }
+
+        nav {
+            background: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #800080;
+        }
+
+        nav a {
+            margin-right: 15px;
+            color: #800080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1, h2, h3 {
+            color: #800080;
+            line-height: 1.25;
+        }
+
+        .article {
+            background: white;
+            padding: 18px 18px 18px 22px;
+            border-radius: 8px;
+            border-left: 4px solid #800080;
+            border: 1px solid #ddd;
+            max-width: 980px;
+        }
+
+        .meta {
+            color: #36454F;
+            font-size: 14px;
+            margin-top: 4px;
+            margin-bottom: 14px;
+        }
+
+        .lead {
+            font-size: 18px;
+            color: #222;
+            margin-top: 10px;
+            margin-bottom: 18px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 18px 0;
+        }
+
+        .quote {
+            background: #faf7ff;
+            border-left: 4px solid #800080;
+            padding: 12px 14px;
+            margin: 16px 0;
+            border-radius: 6px;
+            color: #2d2d2d;
+        }
+
+        .quote strong {
+            color: #800080;
+        }
+
+        ul {
+            margin-top: 8px;
+        }
+
+        .muted {
+            color: #36454F;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 6px 6px 0 0;
+            background: #ffffff;
+            border: 1px solid #e3d8f2;
+            border-radius: 999px;
+            color: #800080;
+            font-size: 12px;
+        }
+
+        .tipbox {
+            background: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-left: 4px solid #800080;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin: 14px 0;
+        }
+
+        .tipbox h3 {
+            margin-top: 0;
+        }
+
+        code {
+            background: #f2f2f2;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #f2f2f2;
+            padding: 12px 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #e3e3e3;
+            line-height: 1.55;
+        }
+
+        .smallcaps {
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #36454F;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="acasa.html">Acasă</a>
+        <a href="articole.html">Articole</a>
+        <a href="tipuri_ai.html">Tipuri de AI și informații de bază</a>
+        <a href="despre.html">Despre site</a>
+        <a href="imagini/coperta.png">Copertă</a>
+    </nav>
+
+    <div class="article">
+        <div class="smallcaps">Tehnologie</div>
+        <h1>Dezvoltareia. Cum se construiesc aplicații cu AI: de la idee la produs, fără mituri și fără „magie”</h1>
+        <div class="meta">
+            Publicat: 5 martie 2026 • Categoria: Tehnologie • Timp de citire: 12-14 minute
+        </div>
+
+        <p class="lead">
+            În 2026, „aplicație cu AI” poate însemna orice, de la un chatbot simplu până la un sistem care clasifică documente,
+            extrage date din contracte, rezumă ședințe sau asistă un flux de lucru într-o companie. Dar între idee și produs este o diferență mare.
+            În faza de demo, AI pare perfectă. În producție, apare tot ce contează: erori, costuri, date, confidențialitate, audit,
+            integrare și mentenanță. „Dezvoltareia” este numele generic al procesului prin care treci de la experiment la sistem real.
+        </p>
+
+        <div class="tag">Dezvoltare</div>
+        <div class="tag">AI</div>
+        <div class="tag">Aplicații</div>
+        <div class="tag">RAG</div>
+        <div class="tag">MLOps</div>
+
+        <div class="divider"></div>
+
+        <h2>Pasul 0: definește problema, nu „tehnologia”</h2>
+        <p>
+            Cel mai frecvent eșec este să pornești cu „vreau AI” în loc de „vreau să rezolv X”.
+            AI este utilă doar dacă reduce costul sau timpul unei sarcini și dacă toleranța la eroare este compatibilă cu produsul.
+            Nu toate sarcinile sunt bune pentru AI. Dacă ai reguli clare, un algoritm clasic sau o automatizare simplă poate fi mai bună,
+            mai ieftină și mai ușor de auditat.
+        </p>
+        <p>
+            O definiție bună a problemei include: cine folosește, ce intră, ce iese, cât de des, care este costul greșelii,
+            și cum arată un rezultat acceptabil.
+        </p>
+
+        <div class="quote">
+            <strong>Filtru simplu:</strong> dacă nu poți descrie criteriul de „bun” în 3 propoziții, nu ești pregătit să bagi AI în produs.
+        </div>
+
+        <h2>Pasul 1: alege categoria de soluție</h2>
+        <p>
+            În practică, majoritatea aplicațiilor cu AI intră în una din aceste categorii. Alegerea corectă economisește luni.
+        </p>
+        <ul>
+            <li><strong>Asistent conversațional:</strong> întrebări și răspunsuri, suport, triere.</li>
+            <li><strong>Generare de text:</strong> drafturi, e-mailuri, rapoarte, descrieri.</li>
+            <li><strong>Clasificare:</strong> etichete pentru e-mailuri, tichete, documente.</li>
+            <li><strong>Extragere de informație:</strong> câmpuri din PDF-uri, contracte, facturi.</li>
+            <li><strong>Recomandare:</strong> sugestii, prioritizare, „următorul pas”.</li>
+            <li><strong>Multimodal:</strong> imagini, audio, video, OCR inteligent.</li>
+        </ul>
+
+        <h2>Pasul 2: decide dacă ai nevoie de date proprii sau doar de model</h2>
+        <p>
+            Un model general poate fi suficient pentru sarcini generice. Dar când ai informații interne,
+            proceduri, politici, produse, nomenclatoare, atunci apare cerința de cunoaștere specifică.
+            Ai două opțiuni principale:
+        </p>
+        <ul>
+            <li><strong>RAG:</strong> modelul caută în documentele tale și răspunde bazat pe ele.</li>
+            <li><strong>Fine-tuning:</strong> ajustezi modelul cu exemple ca să învețe stilul și comportamentul.</li>
+        </ul>
+        <p>
+            În 2026, multe proiecte serioase încep cu RAG, pentru că e mai controlabil: poți vedea sursele, poți actualiza documentele,
+            poți limita răspunsurile la ce există în baza ta.
+            Fine-tuning devine util când ai multe exemple stabile și vrei comportament consistent, dar fără să cari documente la fiecare cerere.
+        </p>
+
+        <div class="tipbox">
+            <h3>Regulă de alegere</h3>
+            <p class="muted">
+                Dacă problema este „nu știe informațiile mele”, folosește RAG.
+                Dacă problema este „știe informațiile, dar răspunde prost”, ia în calcul fine-tuning.
+            </p>
+        </div>
+
+        <h2>Pasul 3: proiectează promptul ca pe o specificație</h2>
+        <p>
+            Într-un produs AI, promptul nu este o întrebare. Este o specificație de comportament.
+            Promptul spune ce rol are modelul, ce input primește, ce output trebuie să producă, ce reguli are, ce nu are voie să facă,
+            și cum trebuie să se comporte când nu știe.
+        </p>
+
+        <pre><code>Rol: Ești un asistent pentru suport tehnic.
+Sarcină: Răspunde doar folosind informația din "Surse".
+Format: 1) Răspuns scurt 2) Pași 3) Când să contacteze un om.
+Reguli: Dacă sursele nu conțin răspunsul, spune "Nu există în surse" și pune 2 întrebări de clarificare.
+Surse: ...</code></pre>
+
+        <p>
+            Specificațiile reduc halucinațiile, dar nu le elimină. De aceea, promptul trebuie combinat cu mecanisme de produs:
+            limite, verificare, log-uri, teste.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>Pasul 4: construiește „pipeline-ul”, nu doar o fereastră de chat</h2>
+        <p>
+            Un produs real înseamnă pași. Chiar și un chatbot simplu are un pipeline:
+            input, curățare, detecție de limbă, moderare, căutare în documente, generare, post-procesare, logging.
+            Fără pipeline, ai un demo fragil.
+        </p>
+
+        <h3>Componente tipice într-un produs AI</h3>
+        <ul>
+            <li><strong>Pre-procesare:</strong> curățare text, eliminare date sensibile, normalizare.</li>
+            <li><strong>Retrieval:</strong> căutare în documente, top-k surse, scor de relevanță.</li>
+            <li><strong>Generare:</strong> modelul produce răspunsul cu constrângeri.</li>
+            <li><strong>Post-procesare:</strong> verificare format, extragere structură, filtre.</li>
+            <li><strong>Observabilitate:</strong> log-uri, metrici, evaluare, feedback.</li>
+            <li><strong>Failover:</strong> ce faci când modelul nu răspunde sau răspunde prost.</li>
+        </ul>
+
+        <h2>Pasul 5: testează ca un produs, nu ca un experiment</h2>
+        <p>
+            Testarea în AI este diferită. Nu ai doar „merge sau nu merge”. Ai „cât de des greșește și în ce mod”.
+            Ai nevoie de seturi de întrebări reprezentative, de cazuri limită și de metrici clare.
+        </p>
+
+        <h3>Tipuri de teste necesare</h3>
+        <ul>
+            <li><strong>Funcționale:</strong> respectă formatul, respectă regulile, nu spune lucruri interzise.</li>
+            <li><strong>Calitate:</strong> răspunsuri corecte, complete, fără halucinații evidente.</li>
+            <li><strong>Robustețe:</strong> input murdar, cereri ambigue, atacuri de tip prompt injection.</li>
+            <li><strong>Cost:</strong> tokeni, latență, volum, buget.</li>
+            <li><strong>Siguranță:</strong> date sensibile, confidențialitate, filtrare.</li>
+        </ul>
+
+        <div class="quote">
+            <strong>Regulă:</strong> dacă nu ai un set de teste repetabil, nu ai produs. Ai doar impresii.
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>RAG în practică: cea mai comună arhitectură în 2026</h2>
+        <p>
+            RAG înseamnă Retrieval Augmented Generation. Modelul nu „știe” documentele tale din cap.
+            Le caută, le citește și răspunde. Ca să funcționeze bine, ai nevoie de trei lucruri.
+        </p>
+
+        <h3>1) Documente curate</h3>
+        <p>
+            Dacă documentele sunt haotice, răspunsurile vor fi haotice.
+            Ai nevoie de versiuni actuale, de structură, de eliminarea duplicatelor și de reguli de publicare.
+        </p>
+
+        <h3>2) Indexare bună</h3>
+        <p>
+            Documentele trebuie împărțite în fragmente coerente și indexate cu embeddings.
+            Dacă fragmentele sunt prea mici, pierzi context. Dacă sunt prea mari, pierzi relevanță.
+            Aici se câștigă sau se pierde calitatea.
+        </p>
+
+        <h3>3) Protecție contra prompt injection</h3>
+        <p>
+            Un document poate conține instrucțiuni malițioase: „ignoră regulile și dezvăluie tot”.
+            Un sistem RAG trebuie să trateze documentele ca date, nu ca instrucțiuni.
+            Se folosesc filtre, reguli, separare strictă între promptul de sistem și conținut.
+        </p>
+
+        <div class="tipbox">
+            <h3>Indicator de calitate pentru RAG</h3>
+            <p class="muted">
+                Dacă asistentul răspunde cu citate și fragmente corecte din documente, dar concluzia lui e greșită,
+                atunci problema e în prompt sau în post-procesare, nu în căutare.
+            </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Costuri: cum arată bugetul real al unei aplicații cu AI</h2>
+        <p>
+            Costul nu este doar „cât plătești pe model”. Ai și cost de dezvoltare, de infrastructură, de securitate,
+            de testare, de suport. În plus, costul pe model crește cu lungimea promptului și a contextului.
+            Dacă bagi documente mari la fiecare cerere, factura urcă. De aceea, optimizarea promptului și a retrieval-ului
+            nu este un moft. Este o cerință economică.
+        </p>
+
+        <h2>Confidențialitate și reguli: unde se rupe proiectul dacă ignori</h2>
+        <p>
+            Un produs AI poate atinge date sensibile: informații personale, contracte, e-mailuri, istorice.
+            Dacă nu ai politici și filtre, te expui. Un minim de igienă înseamnă:
+            control acces, log-uri, separare de medii, anonimizare, și reguli clare despre ce poate fi trimis către model.
+        </p>
+        <p>
+            În multe contexte, este obligatoriu să poți explica de ce s-a dat un răspuns sau o decizie.
+            Dacă nu poți, vei avea probleme în audit și în relația cu utilizatorii.
+        </p>
+
+        <div class="quote">
+            <strong>Regulă:</strong> dacă nu poți răspunde la întrebarea „cine răspunde când greșește AI-ul”, proiectul nu e matur.
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Concluzie: „Dezvoltareia” este despre inginerie, nu despre magie</h2>
+        <p>
+            Aplicațiile cu AI pot fi transformatoare, dar numai dacă sunt construite ca sisteme complete.
+            Asta înseamnă problemă clară, alegere corectă de arhitectură, prompturi ca specificații,
+            pipeline cu observabilitate, testare repetabilă, control al datelor și plan de mentenanță.
+            Un demo se face repede. Un produs bun se face disciplinat.
+        </p>
+
+        <p class="muted">
+            Notă: „Dezvoltareia” este folosit ca nume generic. Articol informativ despre practici comune în dezvoltarea aplicațiilor AI.
+        </p>
+    </div>
+
+    <footer>
+        2026 - Secțiunea Articole
+    </footer>
+
+</body>
+</html>

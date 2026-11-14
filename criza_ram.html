@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criza de RAM: când memoria nu mai ajunge</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+            line-height: 1.75;
+        }
+
+        nav {
+            background: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #800080;
+        }
+
+        nav a {
+            margin-right: 15px;
+            color: #800080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1, h2, h3 {
+            color: #800080;
+            line-height: 1.25;
+        }
+
+        .article {
+            background: white;
+            padding: 18px 18px 18px 22px;
+            border-radius: 8px;
+            border-left: 4px solid #800080;
+            border: 1px solid #ddd;
+            max-width: 980px;
+        }
+
+        .meta {
+            color: #36454F;
+            font-size: 14px;
+            margin-top: 4px;
+            margin-bottom: 14px;
+        }
+
+        .lead {
+            font-size: 18px;
+            color: #222;
+            margin-top: 10px;
+            margin-bottom: 18px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 18px 0;
+        }
+
+        .quote {
+            background: #faf7ff;
+            border-left: 4px solid #800080;
+            padding: 12px 14px;
+            margin: 16px 0;
+            border-radius: 6px;
+            color: #2d2d2d;
+        }
+
+        .quote strong {
+            color: #800080;
+        }
+
+        ul {
+            margin-top: 8px;
+        }
+
+        .muted {
+            color: #36454F;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 6px 6px 0 0;
+            background: #ffffff;
+            border: 1px solid #e3d8f2;
+            border-radius: 999px;
+            color: #800080;
+            font-size: 12px;
+        }
+
+        .tipbox {
+            background: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-left: 4px solid #800080;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin: 14px 0;
+        }
+
+        .tipbox h3 {
+            margin-top: 0;
+        }
+
+        code {
+            background: #f2f2f2;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .smallcaps {
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #36454F;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="acasa.html">Acasă</a>
+        <a href="articole.html">Articole</a>
+        <a href="tipuri_ai.html">Tipuri de AI și informații de bază</a>
+        <a href="despre.html">Despre site</a>
+        <a href="imagini/coperta.png">Copertă</a>
+    </nav>
+
+    <div class="article">
+        <div class="smallcaps">Tehnologie</div>
+        <h1>Criza de RAM. De ce „nu mai ajunge memoria” pe laptopuri și telefoane, ce se întâmplă în spate și cum îți salvezi sistemul</h1>
+        <div class="meta">
+            Publicat: 5 martie 2026 • Categoria: Tehnologie • Timp de citire: 9-11 minute
+        </div>
+
+        <p class="lead">
+            Tot mai mulți utilizatori au aceeași plângere: „am 8 GB RAM și tot se blochează”, „browserul îmi mănâncă tot”,
+            „după un update, laptopul a devenit lent”, „deschid un joc sau o aplicație și începe să își dea restart”.
+            Nu e o impresie izolată. În ultimii ani, cererea de memorie a crescut mai repede decât obiceiul de a cumpăra
+            dispozitive cu mai mult RAM. Rezultatul este o criză personală de RAM, nu o criză globală de producție:
+            utilizatorul simte că sistemul nu mai are loc să respire.
+        </p>
+
+        <div class="tag">RAM</div>
+        <div class="tag">Performanță</div>
+        <div class="tag">Windows</div>
+        <div class="tag">Browser</div>
+        <div class="tag">Optimizare</div>
+
+        <div class="divider"></div>
+
+        <h2>Ce este RAM, pe scurt, și de ce contează mai mult decât pare</h2>
+        <p>
+            RAM este memoria rapidă în care sistemul ține datele de lucru ale programelor. Când deschizi un browser,
+            filele, imaginile, scripturile, extensiile și procesele asociate sunt încărcate în RAM. Când deschizi un editor,
+            un joc sau un program de proiectare, aceleași lucruri se întâmplă la scară mai mare.
+        </p>
+        <p>
+            Dacă RAM se umple, sistemul începe să se descurce prin soluții de avarie: mută date pe disc (swap sau pagefile),
+            închide procese, îngheață temporar aplicații sau reduce agresiv resursele. Discul este mai lent decât RAM,
+            chiar și când ai SSD. De aceea, trecerea masivă pe swap se simte ca un șoc: totul „răspunde” cu întârziere.
+        </p>
+
+        <div class="quote">
+            <strong>Ideea-cheie:</strong> lipsa de RAM nu te încetinește liniar. Te lovește în valuri.
+            Când treci pragul, sistemul poate deveni brusc instabil.
+        </div>
+
+        <h2>De ce pare că a apărut „criza”</h2>
+
+        <h3>1) Browserul a devenit un sistem de operare în interiorul sistemului</h3>
+        <p>
+            Browserul modern nu mai afișează pagini simple. Rulează aplicații complete: documente cloud,
+            editare, video la rezoluții mari, meeting-uri, mesagerie, dashboard-uri, platforme educaționale.
+            În spate există mai multe procese, izolare pe tab, sandboxing și servicii de securitate.
+            Toate sunt bune pentru siguranță și stabilitate, dar costă RAM.
+        </p>
+        <p>
+            În plus, multe site-uri încarcă biblioteci mari, reclame, trackere și scripturi de analiză.
+            Chiar dacă tu citești un text, pagina poate rula zeci de componente care stau în memorie.
+        </p>
+
+        <h3>2) Aplicațiile „electron” și interfețele grele au explodat</h3>
+        <p>
+            O parte din aplicațiile moderne sunt, practic, pagini web împachetate ca program desktop.
+            Avantajul este dezvoltare rapidă și aspect consistent. Dezavantajul este consum mare de RAM și procese multiple.
+            Când ai 3-4 astfel de aplicații deschise, plus browser, plus un editor, ajungi repede la limită.
+        </p>
+
+        <h3>3) Multitasking real: nu mai folosești un singur program</h3>
+        <p>
+            Utilizarea tipică a unui student sau angajat în 2026 înseamnă: browser cu multe file, PDF-uri, editor de text,
+            platforme de curs, chat, muzică, uneori un IDE, uneori o aplicație video, uneori un joc.
+            Nu pare mult, dar fiecare element are procese și cache.
+        </p>
+
+        <h3>4) AI și modele locale cresc presiunea</h3>
+        <p>
+            Unele funcții AI rulează în cloud, dar crește și zona de AI local: efecte video, denoise în imagini,
+            transcriere, instrumente de productivitate, uneori modele care rulează pe dispozitiv.
+            Chiar și când nu rulezi un model mare, aplicațiile includ componente care rezervă memorie.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>Cum îți dai seama că problema este RAM, nu „procesor slab”</h2>
+        <p>
+            Semnele sunt relativ stabile, indiferent de sistem.
+        </p>
+        <ul>
+            <li>Se blochează totul când comuți între aplicații, deși procesorul nu pare la 100% constant.</li>
+            <li>LED-ul de disc sau activitatea SSD-ului devine constantă, chiar și fără download.</li>
+            <li>Programul „îngheață” câteva secunde și apoi își revine.</li>
+            <li>Tab-uri din browser se reîncarcă singure când revii la ele.</li>
+            <li>Primești mesaje despre memorie insuficientă sau aplicații care se închid brusc.</li>
+        </ul>
+
+        <div class="tipbox">
+            <h3>Verificare rapidă</h3>
+            <p class="muted">
+                În Windows: Task Manager → Performance → Memory. În macOS: Activity Monitor → Memory. În Linux: <code>htop</code> sau <code>free -h</code>.
+                Dacă RAM-ul e constant aproape de maxim și „swap” urcă, ai găsit cauza.
+            </p>
+        </div>
+
+        <h2>De ce „swap pe SSD” nu salvează complet situația</h2>
+        <p>
+            SSD-ul este rapid, dar nu este RAM. RAM are latență mult mai mică și poate fi accesat masiv în paralel.
+            Când sistemul mută date între RAM și SSD, pierde timp pe operații de copiere și pe așteptare.
+            În plus, dacă ai un SSD mai vechi sau aproape plin, performanța scade.
+        </p>
+        <p>
+            Swap-ul este o plasă de siguranță, nu un înlocuitor. Îți permite să nu se închidă tot, dar nu îți dă fluiditate.
+            Dacă intri des în swap, ai o problemă structurală: fie prea puțin RAM, fie aplicații prea grele, fie ambele.
+        </p>
+
+        <div class="quote">
+            <strong>Consecință:</strong> „merge, dar greu” este semn de swap. „se închide” este semn că nici swap-ul nu mai ajunge.
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Cine este cel mai expus: 8 GB devine pragul fragil</h2>
+        <p>
+            Pentru utilizare modernă, 8 GB RAM este cel mai frecvent prag unde apar probleme vizibile.
+            Poți lucra, dar orice abatere îți rupe ritmul: câteva tab-uri în plus, o aplicație de meeting, un IDE,
+            un joc, un proiect mai mare. 16 GB oferă un confort mult mai bun pentru multitasking normal.
+            32 GB devine relevant în proiecte grele: editare video, mașini virtuale, proiecte mari de programare,
+            baze de date, modele AI locale sau gaming cu multe aplicații în fundal.
+        </p>
+        <p>
+            La telefoane, situația este diferită, pentru că sistemele mobile gestionează agresiv aplicațiile din fundal.
+            Dar și acolo, când memoria e mică, aplicațiile se reîncarcă, se pierd stări, apar lag-uri și se simte „oboseala” dispozitivului.
+        </p>
+
+        <h2>Ce poți face fără să cumperi nimic: măsuri care chiar au efect</h2>
+
+        <h3>1) Redu tab-urile și extensiile, nu doar „închide browserul”</h3>
+        <p>
+            Nu numărul de tab-uri e singurul vinovat, ci ce rulează în ele. Platforme video, rețele sociale, aplicații web complexe,
+            file cu documente mari, pagini cu multe reclame. Extensiile pot consuma memorie în fiecare tab.
+            Elimină extensiile pe care nu le folosești zilnic.
+        </p>
+
+        <h3>2) Oprește pornirea automată a programelor</h3>
+        <p>
+            Multe aplicații pornesc cu sistemul și stau în fundal „ca să fie gata”. Asta e comod, dar îți consumă RAM constant.
+            Dezactivează ce nu e critic: launchere, updatere, chat-uri secundare, tool-uri de gaming dacă nu le folosești.
+        </p>
+
+        <h3>3) Curăță obiceiul de multitasking: folosește sesiuni</h3>
+        <p>
+            Dacă lucrezi la un curs, nu ține în paralel și video, și joc, și 40 de tab-uri, și un IDE, și meeting.
+            Fă sesiuni: bloc de lucru, bloc de pauză. Asta e o soluție cognitivă, dar are efect tehnic imediat.
+        </p>
+
+        <h3>4) Actualizează aplicațiile grele și evită variantele „beta”</h3>
+        <p>
+            Uneori, un update repară scurgeri de memorie. Alteori le introduce. Dacă ai probleme după un update,
+            verifică dacă există patch-uri. Evită versiuni experimentale pe un sistem limitat.
+        </p>
+
+        <div class="tipbox">
+            <h3>Indicator de scurgere de memorie</h3>
+            <p class="muted">
+                Dacă la început totul merge bine, iar după 2-3 ore sistemul devine din ce în ce mai lent fără motiv,
+                e posibil să ai o aplicație care „umflă” RAM-ul în timp. Repornește acea aplicație sau sistemul.
+            </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Când merită upgrade. Și când nu ai ce face fără</h2>
+        <p>
+            Dacă dispozitivul permite upgrade, RAM-ul este una dintre cele mai eficiente investiții pentru fluiditate.
+            Dar nu toate laptopurile permit. Unele au RAM lipit pe placă. În acele cazuri, trebuie să optimizezi sau să schimbi dispozitivul.
+        </p>
+
+        <h3>Upgrade recomandat, în termeni practici</h3>
+        <ul>
+            <li><strong>8 GB → 16 GB:</strong> cel mai mare salt de confort pentru multitasking.</li>
+            <li><strong>16 GB → 32 GB:</strong> relevant dacă faci editare video, VM, IDE grele, proiecte mari, multitasking intens.</li>
+            <li><strong>Sub 8 GB:</strong> orice utilizare modernă devine ușor frustrantă, mai ales pe Windows.</li>
+        </ul>
+
+        <h2>Mituri care te fac să pierzi timp</h2>
+        <ul>
+            <li><strong>Mit:</strong> „Dacă închid aplicații, totul se rezolvă.” <strong>Realitate:</strong> dacă revii la aceeași încărcare, revine problema.</li>
+            <li><strong>Mit:</strong> „SSD-ul e suficient ca să înlocuiască RAM-ul.” <strong>Realitate:</strong> swap-ul ajută, dar nu îți dă fluiditate.</li>
+            <li><strong>Mit:</strong> „Antivirusul e vinovat mereu.” <strong>Realitate:</strong> uneori, dar de multe ori vinovatul e browserul și aplicațiile.</li>
+            <li><strong>Mit:</strong> „Curăț RAM-ul cu un program.” <strong>Realitate:</strong> multe astfel de programe fac mai mult rău decât bine.</li>
+        </ul>
+
+        <div class="quote">
+            <strong>Regulă simplă:</strong> dacă RAM-ul e limitat, cea mai bună optimizare este să reduci lucrurile care stau deschise,
+            nu să instalezi „optimizatoare”.
+        </div>
+
+        <h2>Concluzie: criza de RAM este efectul normal al unei lumi digitale mai grele</h2>
+        <p>
+            Nu este un mister și nu este doar „laptop slab”. Aplicațiile au crescut în complexitate, browserul a devenit central,
+            iar multitasking-ul este acum standard. Dacă ai RAM puțin, vei simți ruptura mai des. Soluția realistă este una dintre trei:
+            disciplină de utilizare, reducerea aplicațiilor grele, sau upgrade. Orice altceva este cosmetizare.
+        </p>
+
+        <p class="muted">
+            Notă: articol informativ. „Criza de RAM” este folosit ca termen jurnalistic pentru o problemă comună a utilizatorilor, nu pentru o criză industrială.
+        </p>
+    </div>
+
+    <footer>
+        2026 - Secțiunea Articole
+    </footer>
+
+</body>
+</html>
